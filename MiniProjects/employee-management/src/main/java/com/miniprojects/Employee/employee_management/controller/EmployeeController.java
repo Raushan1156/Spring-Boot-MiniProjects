@@ -1,0 +1,29 @@
+package com.miniprojects.Employee.employee_management.controller;
+
+import com.miniprojects.Employee.employee_management.dto.EmployeeDto;
+import com.miniprojects.Employee.employee_management.service.EmployeeService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(path = "/api")
+public class EmployeeController {
+
+    private final EmployeeService employeeService;
+
+    public EmployeeController(EmployeeService employeeService){
+        this.employeeService = employeeService;
+    }
+
+    @GetMapping(path = "/employee")
+    public EmployeeDto getEmployees(){
+        return employeeService.getAllEmployee();
+    }
+
+    @GetMapping("/employee/{id}")
+    public EmployeeDto getEmployeeById(@PathVariable Long id){
+        return employeeService.getEmployeeById(id);
+    }
+}
