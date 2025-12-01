@@ -21,9 +21,10 @@ Explore StaleObjectStateException
 We can't store the dto to entity directly.
 
 -------------------------------------------------------------------------------------------------------------
-5) java: constructor EmployeeEntity in class com.miniprojects.Employee.employee_management.entity.EmployeeEntity cannot be applied to given types;
+5) java: constructor EmployeeEntity in class com.miniprojects.Employee.employee_management.entity.EmployeeEntity cannot be applied to the given types.
   required: no arguments
   found:    long,java.lang.String,java.lang.String,java.lang.String,int,boolean
   reason: actual and formal argument lists differ in length
 
+Tried : lombok plugin installed, jdk, invalidate cache
 Solution: searching
