@@ -24,7 +24,7 @@
 
 	<dependencies>
 
-		<!-- ================= CORE SPRING DEPENDENCIES ================ -->
+		<!-- ================= CORE SPRING DEPENDENCIES ================= -->
 
 		<!-- Web -->
 		<dependency>
