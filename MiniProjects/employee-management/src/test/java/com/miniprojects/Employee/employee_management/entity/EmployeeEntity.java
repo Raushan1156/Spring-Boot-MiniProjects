@@ -20,7 +20,7 @@ public class EmployeeEntity {
     String name;
     String email;
     String designation;
-    //    LocalDate dateOfJoining;
+//    LocalDate dateOfJoining;
     Integer salary;
     boolean isActive;
 }
