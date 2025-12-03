@@ -2,20 +2,29 @@
 
 Ans: I was missing below line in prop file.
 spring.jpa.hibernate.ddl-auto=update
-
+-------------------------------------------------------------------------------------------------------------
 2)Sequence "EMPLOYEE_SEQ" not found; SQL statement:
 select next value for employee_seq [90036-232]
 2025-01-14T09:41:25.415+05:30 ERROR 9808 --- [Rest Api] [nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessResourceUsageException: could not prepare statement [Sequence "EMPLOYEE_SEQ" not found; SQL statement:
 select next value for employee_seq [90036-232]] [select next value for employee_seq]; SQL [select next value for employee_seq]] with root cause
 
 Ans: I was missing the default constructer in my dto class.
-
+-------------------------------------------------------------------------------------------------------------
 
 3) org.hibernate.StaleObjectStateException: Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [com.RestApi.crudapi.entity.EmployeeEntity#2]
 
 This occured when I tried to update the row which doesn't exist.
 Explore StaleObjectStateException
-
+-------------------------------------------------------------------------------------------------------------
 4) java.lang.IllegalArgumentException: Can not set java.lang.String field com.RestApi.crudapi.dto.EmployeeDto.name to com.RestApi.crudapi.entity.EmployeeEntity
 
 We can't store the dto to entity directly.
+
+-------------------------------------------------------------------------------------------------------------
+5) java: constructor EmployeeEntity in class com.miniprojects.Employee.employee_management.entity.EmployeeEntity cannot be applied to the given types.
+  required: no arguments
+  found:    long,java.lang.String,java.lang.String,java.lang.String,int,boolean
+  reason: actual and formal argument lists differ in length
+
+Tried : lombok plugin installed, jdk, invalidate cache
+Solution: https://medium.com/@raushan1156/fixing-lombok-constructor-error-in-intellij-constructor-cannot-be-applied-to-given-types-a454d1720310
