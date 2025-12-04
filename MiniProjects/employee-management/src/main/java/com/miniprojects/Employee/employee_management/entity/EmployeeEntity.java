@@ -1,6 +1,7 @@
 package com.miniprojects.Employee.employee_management.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -22,5 +23,6 @@ public class EmployeeEntity {
     String designation;
     //    LocalDate dateOfJoining;
     Integer salary;
-    boolean isActive;
+    @JsonProperty("active")
+    Boolean active;
 }

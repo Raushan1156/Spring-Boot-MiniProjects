@@ -1,5 +1,6 @@
 package com.miniprojects.Employee.employee_management.controller;
 
+import com.miniprojects.Employee.employee_management.EmployeeManagementApplication;
 import com.miniprojects.Employee.employee_management.dto.EmployeeDto;
 import com.miniprojects.Employee.employee_management.service.EmployeeService;
 import org.springframework.http.HttpStatus;
@@ -30,10 +31,28 @@ public class EmployeeController {
             return ResponseEntity.ok(employeeDto);
     }
 
-    @PutMapping("/employee")
+    @PostMapping("/employee")
     public ResponseEntity<EmployeeDto> createEmployee(@RequestBody EmployeeDto employeeDto){
         EmployeeDto savedEmployee = employeeService.createEmployee(employeeDto);
         return new  ResponseEntity<>(savedEmployee, HttpStatus.CREATED);
+    }
+
+    @PutMapping("/employee/{id}")
+    public ResponseEntity<EmployeeDto> updateEmployee(@PathVariable Long id, @RequestBody EmployeeDto employeeDto){
+        EmployeeDto employeeDto1 = employeeService.updateEmployeeDetails(id, employeeDto);
+        return ResponseEntity.ok(employeeDto1);
+    }
+
+    @DeleteMapping("/employee/{id}")
+    public ResponseEntity<Boolean> deleteEmployee(@PathVariable Long id){
+        boolean isDeleted = employeeService.deleteEmployee(id);
+        return ResponseEntity.ok(isDeleted);
+    }
+
+    @PatchMapping("/employee/{id}")
+    public ResponseEntity<EmployeeDto> patchEmployee(@PathVariable Long id, @RequestBody EmployeeDto employeeDto){
+        EmployeeDto employeeDto1 = employeeService.patchEmployee(id,employeeDto);
+        return ResponseEntity.ok(employeeDto1);
     }
 
 }

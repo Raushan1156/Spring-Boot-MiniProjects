@@ -29,12 +29,48 @@ public class EmployeeService {
 //        EmployeeEntity employeeEntity = new EmployeeEntity(1L,"Raushan","raushan@gmail.com","Manager", 50000,true);
         List<EmployeeEntity> employeeEntity = employeeRepository.findAll();
         return employeeEntity.stream()
-                .map(entity -> modelMapper.map(employeeEntity, EmployeeDto.class)).toList();
+                .map(entity -> modelMapper.map(entity, EmployeeDto.class)).toList();
     }
 
     public EmployeeDto getEmployeeById(Long id) {
         Optional<EmployeeEntity> employeeEntity = employeeRepository.findById(id);
 //        EmployeeEntity employeeEntity = new EmployeeEntity(id,"Raushan","raushan@gmail.com","Manager", 50000,true);
         return  modelMapper.map(employeeEntity, EmployeeDto.class);
+    }
+
+    public EmployeeDto updateEmployeeDetails(Long id, EmployeeDto employeeDto) {
+        EmployeeEntity existingEmployee = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee not found"));
+        modelMapper.map(employeeDto, existingEmployee); // copied data to entity object
+        EmployeeEntity savedData = employeeRepository.save(existingEmployee);
+        return modelMapper.map(savedData, EmployeeDto.class);
+    }
+
+    public boolean deleteEmployee(Long id) {
+        boolean deletedEmployee = employeeRepository.existsById(id);
+        if(deletedEmployee){
+            employeeRepository.deleteById(id);
+        }
+        return deletedEmployee;
+    }
+
+    public EmployeeDto patchEmployee(Long id, EmployeeDto employeeDto) {
+        EmployeeEntity dateToBeSaved = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("user not found"));
+        if(employeeDto.getName() != null){
+            dateToBeSaved.setName(employeeDto.getName());
+        }
+        if(employeeDto.getDesignation() != null){
+            dateToBeSaved.setDesignation(employeeDto.getDesignation());
+        }
+        if(employeeDto.getEmail() != null){
+            dateToBeSaved.setEmail(employeeDto.getEmail());
+        }
+        if(employeeDto.getSalary() != null){
+            dateToBeSaved.setSalary(employeeDto.getSalary());
+        }
+        if(employeeDto.getActive() != null){
+            dateToBeSaved.setActive(employeeDto.getActive());
+        }
+        EmployeeEntity savedData = employeeRepository.save(dateToBeSaved);
+        return modelMapper.map(savedData, EmployeeDto.class);
     }
 }

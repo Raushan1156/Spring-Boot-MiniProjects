@@ -1,5 +1,6 @@
 package com.miniprojects.Employee.employee_management.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -18,5 +19,6 @@ public class EmployeeDto {
     String designation;
 //    LocalDate dateOfJoining;
     Integer salary;
-    boolean isActive;
+//    @JsonProperty("active")
+    Boolean active;
 }
