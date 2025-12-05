@@ -33,6 +33,7 @@ public class EmployeeService {
     }
 
     public EmployeeDto getEmployeeById(Long id) {
+
         Optional<EmployeeEntity> employeeEntity = employeeRepository.findById(id);
 //        EmployeeEntity employeeEntity = new EmployeeEntity(id,"Raushan","raushan@gmail.com","Manager", 50000,true);
         return  modelMapper.map(employeeEntity, EmployeeDto.class);
