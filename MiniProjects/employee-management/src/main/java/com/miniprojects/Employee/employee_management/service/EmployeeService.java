@@ -3,6 +3,7 @@ package com.miniprojects.Employee.employee_management.service;
 //import com.miniprojects.Employee.employee_management.config.ModelMapperConfig;
 import com.miniprojects.Employee.employee_management.dto.EmployeeDto;
 import com.miniprojects.Employee.employee_management.entity.EmployeeEntity;
+import com.miniprojects.Employee.employee_management.exception.EmployeeNotFoundException;
 import com.miniprojects.Employee.employee_management.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -34,7 +35,7 @@ public class EmployeeService {
 
     public EmployeeDto getEmployeeById(Long id) {
 
-        Optional<EmployeeEntity> employeeEntity = employeeRepository.findById(id);
+        EmployeeEntity employeeEntity = employeeRepository.findById(id).orElseThrow(() -> new EmployeeNotFoundException("Employee not found with id:"+id));
 //        EmployeeEntity employeeEntity = new EmployeeEntity(id,"Raushan","raushan@gmail.com","Manager", 50000,true);
         return  modelMapper.map(employeeEntity, EmployeeDto.class);
     }
