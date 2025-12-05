@@ -3,15 +3,14 @@ package com.miniprojects.Employee.employee_management.service;
 //import com.miniprojects.Employee.employee_management.config.ModelMapperConfig;
 import com.miniprojects.Employee.employee_management.dto.EmployeeDto;
 import com.miniprojects.Employee.employee_management.entity.EmployeeEntity;
+import com.miniprojects.Employee.employee_management.exception.DuplicateEmailException;
 import com.miniprojects.Employee.employee_management.exception.EmployeeNotFoundException;
 import com.miniprojects.Employee.employee_management.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -21,9 +20,19 @@ public class EmployeeService {
     private final ModelMapper modelMapper;
 
     public EmployeeDto createEmployee(EmployeeDto employeeDto) {
+        isEmailDuplocate(employeeDto.getEmail());
         EmployeeEntity dataToBeSaved = modelMapper.map(employeeDto, EmployeeEntity.class);
         EmployeeEntity savedData = employeeRepository.save(dataToBeSaved);
         return modelMapper.map(savedData, EmployeeDto.class);
+    }
+
+    private void isEmailDuplocate(String email) {
+//        EmployeeEntity isEmailDuplocate = employeeRepository.findByEmail(email);
+        boolean exists = employeeRepository.findByEmail(email).isPresent();
+
+        if(exists) {
+            throw new DuplicateEmailException(email + " is duplicate");
+        }
     }
 
     public List<EmployeeDto> getAllEmployee() {

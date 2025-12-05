@@ -1,5 +1,6 @@
 package com.miniprojects.Employee.employee_management.advices;
 
+import com.miniprojects.Employee.employee_management.exception.DuplicateEmailException;
 import com.miniprojects.Employee.employee_management.exception.EmployeeNotFoundException;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.http.HttpStatus;
@@ -57,5 +58,14 @@ public class GlobalExceptionHandler {
                 .subErrors(errors)
                 .build();
         return new ResponseEntity<>(apiError, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(DuplicateEmailException.class)
+    public ResponseEntity<ApiError> handleDuplicateEmail(DuplicateEmailException duplicateEmailException) {
+        ApiError apiError = ApiError.builder().
+                httpStatus(HttpStatus.CONFLICT)
+                .message(duplicateEmailException.getMessage())
+                .build();
+        return new ResponseEntity<>(apiError, HttpStatus.CONFLICT);
     }
 }
