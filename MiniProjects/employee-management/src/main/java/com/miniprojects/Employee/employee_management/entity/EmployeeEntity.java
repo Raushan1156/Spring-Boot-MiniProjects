@@ -20,6 +20,7 @@ public class EmployeeEntity {
     Long id;
     String name;
     String email;
+    String employeeId;
     String designation;
     //    LocalDate dateOfJoining;
     Integer salary;

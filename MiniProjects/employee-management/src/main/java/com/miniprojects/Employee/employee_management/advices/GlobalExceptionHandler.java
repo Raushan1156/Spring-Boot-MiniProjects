@@ -1,6 +1,7 @@
 package com.miniprojects.Employee.employee_management.advices;
 
 import com.miniprojects.Employee.employee_management.exception.DuplicateEmailException;
+import com.miniprojects.Employee.employee_management.exception.DuplicateEmployeeIdException;
 import com.miniprojects.Employee.employee_management.exception.EmployeeNotFoundException;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.http.HttpStatus;
@@ -67,5 +68,23 @@ public class GlobalExceptionHandler {
                 .message(duplicateEmailException.getMessage())
                 .build();
         return new ResponseEntity<>(apiError, HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(DuplicateEmployeeIdException.class)
+    public ResponseEntity<ApiError> handleDuplicateEmail(DuplicateEmployeeIdException duplicateEmailException) {
+        ApiError apiError = ApiError.builder().
+                httpStatus(HttpStatus.CONFLICT)
+                .message(duplicateEmailException.getMessage())
+                .build();
+        return new ResponseEntity<>(apiError, HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(NullPointerException.class)
+    public ResponseEntity<ApiError> handleNulPointerException(NullPointerException nullPointerException) {
+        ApiError apiError = ApiError.builder().
+                httpStatus(HttpStatus.BAD_REQUEST)
+                .message("Payload is missing your dto variable and value.")
+                .build();
+        return new ResponseEntity<>(apiError, HttpStatus.BAD_REQUEST);
     }
 }

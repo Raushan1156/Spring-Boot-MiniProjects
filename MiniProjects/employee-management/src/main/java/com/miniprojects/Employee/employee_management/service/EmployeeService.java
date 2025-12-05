@@ -4,6 +4,7 @@ package com.miniprojects.Employee.employee_management.service;
 import com.miniprojects.Employee.employee_management.dto.EmployeeDto;
 import com.miniprojects.Employee.employee_management.entity.EmployeeEntity;
 import com.miniprojects.Employee.employee_management.exception.DuplicateEmailException;
+import com.miniprojects.Employee.employee_management.exception.DuplicateEmployeeIdException;
 import com.miniprojects.Employee.employee_management.exception.EmployeeNotFoundException;
 import com.miniprojects.Employee.employee_management.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
@@ -20,13 +21,14 @@ public class EmployeeService {
     private final ModelMapper modelMapper;
 
     public EmployeeDto createEmployee(EmployeeDto employeeDto) {
-        isEmailDuplocate(employeeDto.getEmail());
+        isEmailDuplicate(employeeDto.getEmail());
+        employeeIdExist(employeeDto.getEmployeeId());
         EmployeeEntity dataToBeSaved = modelMapper.map(employeeDto, EmployeeEntity.class);
         EmployeeEntity savedData = employeeRepository.save(dataToBeSaved);
         return modelMapper.map(savedData, EmployeeDto.class);
     }
 
-    private void isEmailDuplocate(String email) {
+    private void isEmailDuplicate(String email) {
 //        EmployeeEntity isEmailDuplocate = employeeRepository.findByEmail(email);
         boolean exists = employeeRepository.findByEmail(email).isPresent();
 
@@ -83,5 +85,12 @@ public class EmployeeService {
         }
         EmployeeEntity savedData = employeeRepository.save(dateToBeSaved);
         return modelMapper.map(savedData, EmployeeDto.class);
+    }
+
+    public boolean employeeIdExist(String employeeId){
+        boolean exists = employeeRepository.findByEmployeeId(employeeId).isPresent();
+        if(exists)
+            throw new DuplicateEmployeeIdException(employeeId +" already exists");
+        return true;
     }
 }
