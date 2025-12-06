@@ -1,4 +1,4 @@
-# 🚀 Employee Management System (EMS) ![Status: Done](https://img.shields.io/badge/Status-Done-green)
+# 🚀 PROJECT 1 —  **Employee Management System (EMS)** ![Status: Done](https://img.shields.io/badge/Status-Done-green)
 
 
 A clean Spring Boot REST API designed to manage employee data while demonstrating core backend engineering concepts such as **CRUD**, **DTO mapping**, **validation**, **exception handling**, and **service-layer architecture**.
@@ -78,8 +78,6 @@ This project demonstrates your understanding of:
 ---
 
 # 🟩 PROJECT 2 — **Workforce Insight & Payroll Analytics System (WIPAS)**  ![Status: In Progress](https://img.shields.io/badge/Status-In%20Progress-blue)
-
-# 🚀 Workforce Insight & Payroll Analytics System (WIPAS)
 
 A Spring Boot application focused on **advanced JPA**, **analytics**, and **transactional HR operations**.  
 This project is perfect for demonstrating deeper Spring Data JPA skills beyond basic CRUD.
