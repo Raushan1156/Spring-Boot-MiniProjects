@@ -1,0 +1,93 @@
+# Project Specification: Workforce Insight & Payroll Management System (WIPAS)
+
+## Project Overview
+A Spring Boot system providing employee management, payroll analytics, and HR insights using advanced JPA features.
+
+## Entities
+### EmployeeEntity
+id
+name
+email
+designation
+salary
+joinDate
+isActive
+departmentId
+
+### DepartmentEntity
+id
+departmentName
+location
+
+## Mandatory Features
+| Topic                        | You will implement using                                                               |
+| -------------------------------------------------------------------------------------- |
+| JPA derived query methods    | findBySalaryBetween(), findByDesignation(), findByIsActiveTrue(), findByDepartmentId() |
+| Custom JPQL + Native queries | Filtering, updates, salary analytics                                                   |
+| Aggregate queries            | SUM, AVG, MAX, MIN, COUNT                                                              |
+| Sorting                      | Sort.by("salary").descending()                                                         |
+| Pagination                   | PageRequest.of(page, size)                                                             |
+| Interface/DTO Projections    | Name + Salary only, or Employee + DepartmentName                                       |
+| @Transactional               | Department change, bulk updates                                                        |
+| @Modifying                   | Update salary, deactivate employee                                                     |
+
+
+
+## Problem Statements
+
+### Problem 1: Dynamic Filtering
+Filter employees using designation, salary range, active status, department, joinDate.
+Use custom JPA methods and @Query.
+
+### Problem 2: Salary Distribution Analysis
+Return:
+totalPayroll
+averageSalary
+highestSalary
+lowestSalary
+salaryDistributionPerDepartment
+
+### Problem 3: Projections
+Return limited fields:
+employeeName
+designation
+departmentName
+
+### Problem 4: Pagination & Sorting
+Support page, size, sort parameters.
+
+### Problem 5: Salary Increment (Transactional + Modifying)
+Increase salary of all employees in a department by a percentage.
+
+### Problem 6: Department Transfer (Transactional)
+Update employee’s department and optionally log transfer.
+
+### Problem 7: Deactivate Employee
+Soft delete using isActive=false via @Modifying.
+
+## API Specifications
+
+### Employee APIs
+POST /api/employees
+GET /api/employees/{id}
+GET /api/employees with pagination, sorting, filtering
+GET /api/employees/projection/basic
+
+### Salary Insight APIs
+GET /api/analytics/salary/summary
+GET /api/analytics/salary/department/{deptId}
+
+### Transactional/Modifying APIs
+PUT /api/employees/{id}/deactivate
+PUT /api/employees/{id}/transfer/{deptId}
+PUT /api/employees/increment-salary
+
+### Department APIs
+POST /api/departments
+GET /api/departments
+
+## Bonus Features
+Keyword search
+Specification API
+Custom exception handler
+Caching for expensive queries
