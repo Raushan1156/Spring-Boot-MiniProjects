@@ -17,3 +17,20 @@
 @GeneratedValue (strategy = GenerationType.AUTO)
 @PostConstruct
 @PreDestroy
+
+
+
+
+---------------------------------------------------------------------------------------
+Topics
+How to call Rest APIs
+Layers and their role
+Database Integration
+ModelMapper
+ReflectionUtils
+Stream API (java.util.stream.Stream) and other traditional ways to achieve the same
+Lambda function
+Functional Interface and Dependency
+stream() method (java.util.stream.Collectors)
+Parallel(o/p order is not fixed) and Sequential(o/p order is fixed) stream()
+ResponseEntity
