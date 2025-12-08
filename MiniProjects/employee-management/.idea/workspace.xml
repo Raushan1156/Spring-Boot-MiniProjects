@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a8d82512-5c73-4d3d-81be-8b2262d437dd" name="Changes" comment="fixed h2 console error | check Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect):" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Raushan1156&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Raushan1156/Spring-Boot-MiniProjects&quot;,
+    &quot;accountId&quot;: &quot;62124d37-f188-42dc-b576-3a29ad606876&quot;
+  }
+}</component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="36FYRAC28TDaSAv694FmaApEBFB" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.EmployeeManagementApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/Raushan/Desktop/Raushan/Coding-shuttle/Projects/Mini-projects/Spring-Boot-MiniProjects/MiniProjects/employee-management/src/test/java",
+    "last_opened_file_path": "C:/Users/Raushan/Desktop/Raushan/Coding-shuttle/Projects/Mini-projects/Spring-Boot-MiniProjects/HospitalManagement",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.miniprojects.Employee.employee_management.exception.DuplicateEmailException" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a8d82512-5c73-4d3d-81be-8b2262d437dd" name="Changes" comment="" />
+      <created>1764603776248</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764603776248</updated>
+    </task>
+    <task id="LOCAL-00001" summary="fixed h2 console error | check Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect):">
+      <option name="closed" value="true" />
+      <created>1764786709162</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1764786709162</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fixed h2 console error | check Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect):">
+      <option name="closed" value="true" />
+      <created>1764786725884</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1764786725884</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fixed h2 console error | check Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect):" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed h2 console error | check Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect):" />
+  </component>
+</project>
