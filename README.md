@@ -1,15 +1,4 @@
 # 🚀 PROJECT 1 —  **Employee Management System (EMS)** ![Status: Done](https://img.shields.io/badge/Status-Done-green)
-
-
-A clean Spring Boot REST API designed to manage employee data while demonstrating core backend engineering concepts such as **CRUD**, **DTO mapping**, **validation**, **exception handling**, and **service-layer architecture**.
-
----
-
-## ⭐ Project Overview
-
-The Employee Management System (EMS) provides APIs for basic employee operations including creation, updates, retrieval, and deletion.  
-This project highlights your understanding of how to structure backend applications using layered architecture and Spring Boot standards.
-
 ---
 
 ## 🔥 Key Features
@@ -78,15 +67,7 @@ This project demonstrates your understanding of:
 ---
 
 # 🟩 PROJECT 2 — **Workforce Insight & Payroll Analytics System (WIPAS)**  ![Status: In Progress](https://img.shields.io/badge/Status-In%20Progress-blue)
-
-A Spring Boot application focused on **advanced JPA**, **analytics**, and **transactional HR operations**.  
-This project is perfect for demonstrating deeper Spring Data JPA skills beyond basic CRUD.
-
 ---
-
-## ⭐ Project Overview
-
-WIPAS provides employee and department management along with **salary analytics** and **HR insights** such as total payroll, salary distribution, department-wise metrics, and bulk updates.
 
 This project highlights your ability to work with:
 
@@ -159,7 +140,7 @@ Uses DTO projections + JPA aggregations to keep responses lightweight and effici
 
 ---
 
-## 🧠 Use Cases Solved
+## 🧠 Use Cases will be Solved...
 
 - HR wants to view salary statistics (total payroll, average salary)
 - HR wants to increase salary for an entire department
@@ -178,4 +159,20 @@ This project demonstrates your skills in:
 - Projections (DTO & Interface-based)  
 - @Transactional logic  
 - Bulk updates with @Modifying  
-- Real business logic implementation  
+- Real business logic implementation
+
+# 🟩 Project-3 | Hospital Management ![Status: In Progress](https://img.shields.io/badge/Status-In%20Progress-blue)
+## 📌 Tech Stack
+`Spring Security`  
+`JWT Creation`  
+`JWT verification`  
+`SignUp and Login`  
+
+### 🔹 APIs
+
+`POST /auth/signup`  
+`PSOT /auth/login`  
+`GET /api/doctor`  
+`GET /api/doctor?id={id}`  
+`GET /api/patient?id={id}`  
+`GET /api/patient`
